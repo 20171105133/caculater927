@@ -10,8 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     var temp = 0
-    var redu = 0
-    var multi = 0
+    var flag = 0
 
     @IBAction func button1(_ sender: Any) {
         caculaterDisplay.text=caculaterDisplay.text!+"1"
@@ -53,34 +52,59 @@ class ViewController: UIViewController {
         caculaterDisplay.text=caculaterDisplay.text!+"0"
     }
     
-    @IBAction func buttonreduce(_ sender: Any) {
-        redu = Int(caculaterDisplay.text!)!
-        caculaterDisplay.text = ""
-    }
     
     @IBAction func buttoncaculator(_ sender: Any) {
-        var sum = 0
-        sum = temp + Int(caculaterDisplay.text!)!
-        caculaterDisplay.text = "\(sum)"
-        var difference = 0
-        difference = redu - Int(caculaterDisplay.text!)!
-        caculaterDisplay.text = "\(difference)"
-        var product = 0
-        product = multi * Int(caculaterDisplay.text!)!
-        caculaterDisplay.text = "\(product)"
-        
+        if(flag == 1)
+        {
+            var sum = 0
+            sum = temp + Int(caculaterDisplay.text!)!
+            caculaterDisplay.text = "\(sum)"
+        }
+        if(flag == 2)
+        {
+            var difference = 0
+            difference = temp - Int(caculaterDisplay.text!)!
+            caculaterDisplay.text = "\(difference)"
+        }
+        if(flag == 3)
+        {
+            var product = 0
+            product = temp * Int(caculaterDisplay.text!)!
+            caculaterDisplay.text = "\(product)"
+        }
+        if(flag == 4)
+        {
+            var quotient = 0
+            quotient = temp / Int(caculaterDisplay.text!)!
+            caculaterDisplay.text = "\(quotient)"
+        }
     }
     
     @IBAction func buttonadd(_ sender: Any) {
         temp = Int(caculaterDisplay.text!)!
         caculaterDisplay.text = ""
+        flag = 1
     }
-    
-    @IBAction func buttonmultiply(_ sender: Any) {
-        multi = Int(caculaterDisplay.text!)!
+    @IBAction func buttonreduce(_ sender: Any) {
+        temp = Int(caculaterDisplay.text!)!
         caculaterDisplay.text = ""
+        flag = 2
+    }
+
+    @IBAction func buttonmultiply(_ sender: Any) {
+        temp = Int(caculaterDisplay.text!)!
+        caculaterDisplay.text = ""
+        flag = 3
     }
     
+    @IBAction func buttondivide(_ sender: Any) {
+        temp = Int(caculaterDisplay.text!)!
+        caculaterDisplay.text = ""
+        flag = 4
+        
+    }
+    
+
     @IBAction func clear(_ sender: Any) {
         caculaterDisplay.text = ""
     }
