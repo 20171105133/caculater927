@@ -9,103 +9,99 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var temp = 0
+    var temp = 0.00
     var flag = 0
 
-    @IBAction func button1(_ sender: Any) {
+    @IBAction func button1(_ sender: Any){
         caculaterDisplay.text=caculaterDisplay.text!+"1"
     }
     
-    @IBAction func button2(_ sender: Any) {
+    @IBAction func button2(_ sender: Any){
         caculaterDisplay.text = caculaterDisplay.text! + "2"
     }
     
-    @IBAction func button3(_ sender: Any) {
+    @IBAction func button3(_ sender: Any){
         caculaterDisplay.text=caculaterDisplay.text!+"3"
     }
     
-    @IBAction func button4(_ sender: Any) {
+    @IBAction func button4(_ sender: Any){
         caculaterDisplay.text=caculaterDisplay.text!+"4"
     }
     
-    @IBAction func button5(_ sender: Any) {
+    @IBAction func button5(_ sender: Any){
         caculaterDisplay.text=caculaterDisplay.text!+"5"
     }
     
-    @IBAction func button6(_ sender: Any) {
+    @IBAction func button6(_ sender: Any){
         caculaterDisplay.text=caculaterDisplay.text!+"6"
     }
     
-    @IBAction func button7(_ sender: Any) {
+    @IBAction func button7(_ sender: Any){
         caculaterDisplay.text=caculaterDisplay.text!+"7"
     }
     
-    @IBAction func button8(_ sender: Any) {
+    @IBAction func button8(_ sender: Any){
         caculaterDisplay.text=caculaterDisplay.text!+"8"
     }
     
-    @IBAction func button9(_ sender: Any) {
+    @IBAction func button9(_ sender: Any){
         caculaterDisplay.text=caculaterDisplay.text!+"9"
     }
     
-    @IBAction func button0(_ sender: Any) {
+    @IBAction func button0(_ sender: Any){
         caculaterDisplay.text=caculaterDisplay.text!+"0"
     }
     
     
-    @IBAction func buttoncaculator(_ sender: Any) {
-        if(flag == 1)
-        {
-            var sum = 0
-            sum = temp + Int(caculaterDisplay.text!)!
+    @IBAction func buttoncaculator(_ sender: Any){
+        if(flag == 1){
+            var sum = 0.00
+            sum = temp + Double(caculaterDisplay.text!)!
             caculaterDisplay.text = "\(sum)"
         }
-        if(flag == 2)
-        {
-            var difference = 0
-            difference = temp - Int(caculaterDisplay.text!)!
+        if(flag == 2){
+            var difference = 0.00
+            difference = temp - Double(caculaterDisplay.text!)!
             caculaterDisplay.text = "\(difference)"
         }
-        if(flag == 3)
-        {
-            var product = 0
-            product = temp * Int(caculaterDisplay.text!)!
+        if(flag == 3){
+            var product = 0.00
+            product = temp * Double(caculaterDisplay.text!)!
             caculaterDisplay.text = "\(product)"
         }
-        if(flag == 4)
-        {
-            var quotient = 0
-            quotient = temp / Int(caculaterDisplay.text!)!
+        if(flag == 4){
+            var quotient = 0.00
+            quotient = temp / Double(caculaterDisplay.text!)!
             caculaterDisplay.text = "\(quotient)"
         }
     }
     
-    @IBAction func buttonadd(_ sender: Any) {
-        temp = Int(caculaterDisplay.text!)!
+    @IBAction func buttonadd(_ sender: Any){
+        temp = Double(caculaterDisplay.text!)!
         caculaterDisplay.text = ""
         flag = 1
     }
-    @IBAction func buttonreduce(_ sender: Any) {
-        temp = Int(caculaterDisplay.text!)!
+    @IBAction func buttonreduce(_ sender: Any){
+        temp = Double(caculaterDisplay.text!)!
         caculaterDisplay.text = ""
         flag = 2
     }
 
-    @IBAction func buttonmultiply(_ sender: Any) {
-        temp = Int(caculaterDisplay.text!)!
+    @IBAction func buttonmultiply(_ sender: Any){
+        temp = Double(caculaterDisplay.text!)!
         caculaterDisplay.text = ""
         flag = 3
     }
     
-    @IBAction func buttondivide(_ sender: Any) {
-        temp = Int(caculaterDisplay.text!)!
+    @IBAction func buttondivide(_ sender: Any){
+        temp = Double(caculaterDisplay.text!)!
         caculaterDisplay.text = ""
         flag = 4
         
     }
     
 
-    @IBAction func clear(_ sender: Any) {
+    @IBAction func clear(_ sender: Any){
         caculaterDisplay.text = ""
     }
     @IBOutlet weak var caculaterDisplay: UITextField!
