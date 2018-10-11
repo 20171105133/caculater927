@@ -74,6 +74,7 @@ class ViewController: UIViewController {
             quotient = temp / Double(caculaterDisplay.text!)!
             caculaterDisplay.text = "\(quotient)"
         }
+        
     }
     
     @IBAction func buttonadd(_ sender: Any){
@@ -100,7 +101,18 @@ class ViewController: UIViewController {
         
     }
     
-
+    @IBAction func point(_ sender: Any) {
+        caculaterDisplay.text = caculaterDisplay.text!  + "."
+    }
+    
+    
+    @IBAction func percent(_ sender: Any) {
+        temp = Double(caculaterDisplay.text!)!
+        temp = temp * 0.01
+        caculaterDisplay.text = "\(temp)"
+        
+    }
+    
     @IBAction func clear(_ sender: Any){
         caculaterDisplay.text = ""
     }
