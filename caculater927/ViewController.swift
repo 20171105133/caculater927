@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func button2(_ sender: Any){
-        caculaterDisplay.text = caculaterDisplay.text! + "2"
+        caculaterDisplay.text = caculaterDisplay.text!+"2"
     }
     
     @IBAction func button3(_ sender: Any){
@@ -113,6 +113,36 @@ class ViewController: UIViewController {
         
     }
     
+    
+    @IBAction func square(_ sender: Any) {
+        temp = Double(caculaterDisplay.text!)!
+        temp = temp * temp
+        caculaterDisplay.text = "\(temp)"
+    }
+    
+    
+    @IBAction func cube(_ sender: Any) {
+        temp = Double(caculaterDisplay.text!)!
+        temp = temp * temp * temp
+        caculaterDisplay.text = "\(temp)"
+    }
+    
+    
+    @IBAction func pion(_ sender: Any) {
+        caculaterDisplay.text = "\(3.141592653589793)"
+    }
+    
+    
+    @IBAction func e(_ sender: Any) {
+        caculaterDisplay.text = "\(2.718281828459045)"
+    }
+    
+    
+    @IBAction func root(_ sender: Any) {
+        temp = Double(caculaterDisplay.text!)!
+        temp = sqrt(temp)
+        caculaterDisplay.text = "\(temp)"
+    }
     @IBAction func clear(_ sender: Any){
         caculaterDisplay.text = ""
     }
