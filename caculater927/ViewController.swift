@@ -143,6 +143,20 @@ class ViewController: UIViewController {
         temp = sqrt(temp)
         caculaterDisplay.text = "\(temp)"
     }
+    
+    
+    @IBAction func factorial(_ sender: Any) {
+        temp = Double(caculaterDisplay.text!)!
+        var i = 1.0
+        var s = 1.0
+        while i <= temp{
+            s = s*i
+            i = i+1
+        }
+        caculaterDisplay.text = "\(s)"
+        
+        
+    }
     @IBAction func clear(_ sender: Any){
         caculaterDisplay.text = ""
     }
