@@ -153,10 +153,15 @@ class ViewController: UIViewController {
             s = s*i
             i = i+1
         }
-        caculaterDisplay.text = "\(s)"
-        
-        
+                caculaterDisplay.text = "\(s)"
     }
+    
+    @IBAction func reciprocal(_ sender: Any) {
+        temp = Double(caculaterDisplay.text!)!
+        temp = 1/temp
+        caculaterDisplay.text = "\(temp)"
+    }
+    
     @IBAction func clear(_ sender: Any){
         caculaterDisplay.text = ""
     }
