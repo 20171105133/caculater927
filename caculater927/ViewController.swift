@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     var temp = 0.00
     var flag = 0
+    var sum = 0.00
 
     @IBAction func button1(_ sender: Any){
         caculaterDisplay.text=caculaterDisplay.text!+"1"
@@ -55,7 +56,6 @@ class ViewController: UIViewController {
     
     @IBAction func buttoncaculator(_ sender: Any){
         if(flag == 1){
-            var sum = 0.00
             sum = temp + Double(caculaterDisplay.text!)!
             caculaterDisplay.text = "\(sum)"
         }
@@ -144,7 +144,6 @@ class ViewController: UIViewController {
         caculaterDisplay.text = "\(temp)"
     }
     
-    
     @IBAction func factorial(_ sender: Any) {
         temp = Double(caculaterDisplay.text!)!
         var i = 1.0
@@ -153,7 +152,14 @@ class ViewController: UIViewController {
             s = s*i
             i = i+1
         }
-                caculaterDisplay.text = "\(s)"
+        caculaterDisplay.text = "\(s)"
+    }
+    
+    
+    @IBAction func buttonminus(_ sender: Any) {
+        temp = Double(caculaterDisplay.text!)!
+        temp = temp * (-1)
+        caculaterDisplay.text = "\(temp)"
     }
     
     @IBAction func reciprocal(_ sender: Any) {
