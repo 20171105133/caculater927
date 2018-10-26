@@ -11,53 +11,141 @@ import UIKit
 class ViewController: UIViewController {
     var temp = 0.00
     var flag = 0
-    var sum = 0.00
+    var calFlag = 0
 
     @IBAction func button1(_ sender: Any){
-        caculaterDisplay.text=caculaterDisplay.text!+"1"
+        if(calFlag == 1){
+            caculaterDisplay.text=caculaterDisplay.text!+"1"
+        }
+        else{
+            caculaterDisplay.text="1"
+        }
+        calFlag = 1
     }
     
     @IBAction func button2(_ sender: Any){
-        caculaterDisplay.text = caculaterDisplay.text!+"2"
+        if(calFlag == 1){
+            caculaterDisplay.text=caculaterDisplay.text!+"2"
+        }
+        else{
+            caculaterDisplay.text="2"
+        }
+        calFlag = 1
     }
     
     @IBAction func button3(_ sender: Any){
-        caculaterDisplay.text=caculaterDisplay.text!+"3"
+        if(calFlag == 1){
+            caculaterDisplay.text=caculaterDisplay.text!+"3"
+        }
+        else{
+            caculaterDisplay.text="3"
+        }
+        calFlag = 1
     }
     
     @IBAction func button4(_ sender: Any){
-        caculaterDisplay.text=caculaterDisplay.text!+"4"
+        if(calFlag == 1){
+            caculaterDisplay.text=caculaterDisplay.text!+"4"
+        }
+        else{
+            caculaterDisplay.text="4"
+        }
+        calFlag = 1
     }
     
     @IBAction func button5(_ sender: Any){
-        caculaterDisplay.text=caculaterDisplay.text!+"5"
+        if(calFlag == 1){
+            caculaterDisplay.text=caculaterDisplay.text!+"5"
+        }
+        else{
+            caculaterDisplay.text="5"
+        }
+        calFlag = 1
     }
     
     @IBAction func button6(_ sender: Any){
-        caculaterDisplay.text=caculaterDisplay.text!+"6"
+        if(calFlag == 1){
+            caculaterDisplay.text=caculaterDisplay.text!+"6"
+        }
+        else{
+            caculaterDisplay.text="6"
+        }
+        calFlag = 1
     }
     
     @IBAction func button7(_ sender: Any){
-        caculaterDisplay.text=caculaterDisplay.text!+"7"
+        if(calFlag == 1){
+            caculaterDisplay.text=caculaterDisplay.text!+"7"
+        }
+        else{
+            caculaterDisplay.text="7"
+        }
+        calFlag = 1
     }
     
     @IBAction func button8(_ sender: Any){
-        caculaterDisplay.text=caculaterDisplay.text!+"8"
+        if(calFlag == 1){
+            caculaterDisplay.text=caculaterDisplay.text!+"8"
+        }
+        else{
+            caculaterDisplay.text="8"
+        }
+        calFlag = 1
     }
     
     @IBAction func button9(_ sender: Any){
-        caculaterDisplay.text=caculaterDisplay.text!+"9"
+        if(calFlag == 1){
+            caculaterDisplay.text=caculaterDisplay.text!+"9"
+        }
+        else{
+            caculaterDisplay.text="9"
+        }
+        calFlag = 1
     }
     
     @IBAction func button0(_ sender: Any){
-        caculaterDisplay.text=caculaterDisplay.text!+"0"
+        if(calFlag == 1){
+            caculaterDisplay.text=caculaterDisplay.text!+"0"
+        }
+        else{
+            caculaterDisplay.text="0"
+        }
+        calFlag = 1
     }
     
+    @IBAction func buttonadd(_ sender: Any){
+        if(flag == 1){
+            caculaterDisplay.text = "\(temp + Double(caculaterDisplay.text!)!)"
+        }
+        temp = Double(caculaterDisplay.text!)!
+        calFlag = 2
+        flag = 1
+    }
+    
+    @IBAction func buttonreduce(_ sender: Any){
+        temp = Double(caculaterDisplay.text!)!
+        caculaterDisplay.text = ""
+        flag = 2
+        calFlag = 2
+    }
+    
+    @IBAction func buttonmultiply(_ sender: Any){
+        temp = Double(caculaterDisplay.text!)!
+        caculaterDisplay.text = ""
+        flag = 3
+        calFlag = 2
+    }
+    
+    @IBAction func buttondivide(_ sender: Any){
+        temp = Double(caculaterDisplay.text!)!
+        caculaterDisplay.text = ""
+        flag = 4
+        calFlag = 2
+    }
     
     @IBAction func buttoncaculator(_ sender: Any){
         if(flag == 1){
-            sum = temp + Double(caculaterDisplay.text!)!
-            caculaterDisplay.text = "\(sum)"
+            caculaterDisplay.text = "\(temp + Double(caculaterDisplay.text!)!)"
         }
         if(flag == 2){
             var difference = 0.00
@@ -74,31 +162,7 @@ class ViewController: UIViewController {
             quotient = temp / Double(caculaterDisplay.text!)!
             caculaterDisplay.text = "\(quotient)"
         }
-        
-    }
-    
-    @IBAction func buttonadd(_ sender: Any){
-        temp = Double(caculaterDisplay.text!)!
-        caculaterDisplay.text = ""
-        flag = 1
-    }
-    @IBAction func buttonreduce(_ sender: Any){
-        temp = Double(caculaterDisplay.text!)!
-        caculaterDisplay.text = ""
-        flag = 2
-    }
-
-    @IBAction func buttonmultiply(_ sender: Any){
-        temp = Double(caculaterDisplay.text!)!
-        caculaterDisplay.text = ""
-        flag = 3
-    }
-    
-    @IBAction func buttondivide(_ sender: Any){
-        temp = Double(caculaterDisplay.text!)!
-        caculaterDisplay.text = ""
-        flag = 4
-        
+        calFlag = 2
     }
     
     @IBAction func point(_ sender: Any) {
@@ -169,11 +233,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clear(_ sender: Any){
-        caculaterDisplay.text = ""
+        temp = 0.00
+        flag = 0
+        calFlag = 0
+        caculaterDisplay.text = "0"
     }
     @IBOutlet weak var caculaterDisplay: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        caculaterDisplay.text="0"
         // Do any additional setup after loading the view, typically from a nib.
     }
 
