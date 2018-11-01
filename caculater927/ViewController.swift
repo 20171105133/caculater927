@@ -123,22 +123,28 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonreduce(_ sender: Any){
+        if(flag == 2){
+            caculaterDisplay.text = "\(temp - Double(caculaterDisplay.text!)!)"
+        }
         temp = Double(caculaterDisplay.text!)!
-        caculaterDisplay.text = ""
         flag = 2
         calFlag = 2
     }
     
     @IBAction func buttonmultiply(_ sender: Any){
+        if(flag == 3){
+            caculaterDisplay.text = "\(temp * Double(caculaterDisplay.text!)!)"
+        }
         temp = Double(caculaterDisplay.text!)!
-        caculaterDisplay.text = ""
         flag = 3
         calFlag = 2
     }
     
     @IBAction func buttondivide(_ sender: Any){
+        if(flag == 4){
+            caculaterDisplay.text = "\(temp / Double(caculaterDisplay.text!)!)"
+        }
         temp = Double(caculaterDisplay.text!)!
-        caculaterDisplay.text = ""
         flag = 4
         calFlag = 2
     }
@@ -148,19 +154,13 @@ class ViewController: UIViewController {
             caculaterDisplay.text = "\(temp + Double(caculaterDisplay.text!)!)"
         }
         if(flag == 2){
-            var difference = 0.00
-            difference = temp - Double(caculaterDisplay.text!)!
-            caculaterDisplay.text = "\(difference)"
+            caculaterDisplay.text = "\(temp - Double(caculaterDisplay.text!)!)"
         }
         if(flag == 3){
-            var product = 0.00
-            product = temp * Double(caculaterDisplay.text!)!
-            caculaterDisplay.text = "\(product)"
+            caculaterDisplay.text = "\(temp * Double(caculaterDisplay.text!)!)"
         }
         if(flag == 4){
-            var quotient = 0.00
-            quotient = temp / Double(caculaterDisplay.text!)!
-            caculaterDisplay.text = "\(quotient)"
+            caculaterDisplay.text = "\(temp / Double(caculaterDisplay.text!)!)"
         }
         calFlag = 2
     }
@@ -172,23 +172,20 @@ class ViewController: UIViewController {
     
     @IBAction func percent(_ sender: Any) {
         temp = Double(caculaterDisplay.text!)!
-        temp = temp * 0.01
-        caculaterDisplay.text = "\(temp)"
+        caculaterDisplay.text = "\(temp * 0.01)"
         
     }
     
     
     @IBAction func square(_ sender: Any) {
         temp = Double(caculaterDisplay.text!)!
-        temp = temp * temp
-        caculaterDisplay.text = "\(temp)"
+        caculaterDisplay.text = "\(temp * temp)"
     }
     
     
     @IBAction func cube(_ sender: Any) {
         temp = Double(caculaterDisplay.text!)!
-        temp = temp * temp * temp
-        caculaterDisplay.text = "\(temp)"
+        caculaterDisplay.text = "\(temp * temp * temp)"
     }
     
     
@@ -204,19 +201,27 @@ class ViewController: UIViewController {
     
     @IBAction func root(_ sender: Any) {
         temp = Double(caculaterDisplay.text!)!
-        temp = sqrt(temp)
-        caculaterDisplay.text = "\(temp)"
+        caculaterDisplay.text = "\(sqrt(temp))"
     }
     
     @IBAction func factorial(_ sender: Any) {
         temp = Double(caculaterDisplay.text!)!
         var i = 1.0
+        var b = 0.00
+        var c:Int = 0
         var s = 1.0
-        while i <= temp{
+        c = Int(temp)
+        b = temp - Double(c)
+        if b != 0.0{
+            caculaterDisplay.text = "不是数字"
+        }
+        else{
+        while Int(i) <= c{
             s = s*i
             i = i+1
         }
         caculaterDisplay.text = "\(s)"
+        }
     }
     
     
