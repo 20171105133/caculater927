@@ -162,6 +162,10 @@ class ViewController: UIViewController {
         if(flag == 4){
             caculaterDisplay.text = "\(temp / Double(caculaterDisplay.text!)!)"
         }
+        if(flag == 5){
+            temp = Foundation.pow(temp,Double(caculaterDisplay.text!)!)
+            caculaterDisplay.text = "\(temp)"
+        }
         calFlag = 2
     }
     
@@ -235,6 +239,13 @@ class ViewController: UIViewController {
         temp = Double(caculaterDisplay.text!)!
         temp = 1/temp
         caculaterDisplay.text = "\(temp)"
+    }
+    
+    
+    @IBAction func pow(_ sender: Any) {
+        temp = Double(caculaterDisplay.text!)!
+        flag = 5
+        calFlag = 2
     }
     
     @IBAction func clear(_ sender: Any){
