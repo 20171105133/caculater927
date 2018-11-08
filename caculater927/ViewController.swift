@@ -248,6 +248,13 @@ class ViewController: UIViewController {
         calFlag = 2
     }
     
+    @IBAction func tenpow(_ sender: Any) {
+        temp = Double(caculaterDisplay.text!)!
+        temp = Foundation.pow(10,temp)
+        caculaterDisplay.text = "\(temp)"
+        calFlag = 2
+    }
+    
     @IBAction func clear(_ sender: Any){
         temp = 0.00
         flag = 0
