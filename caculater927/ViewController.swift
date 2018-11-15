@@ -117,14 +117,32 @@ class ViewController: UIViewController {
         if(flag == 1){
             caculaterDisplay.text = "\(temp + Double(caculaterDisplay.text!)!)"
         }
+        if(flag == 2){
+            caculaterDisplay.text = "\(temp - Double(caculaterDisplay.text!)!)"
+        }
+        if(flag == 3){
+            caculaterDisplay.text = "\(temp * Double(caculaterDisplay.text!)!)"
+        }
+        if(flag == 4){
+            caculaterDisplay.text = "\(temp / Double(caculaterDisplay.text!)!)"
+        }
         temp = Double(caculaterDisplay.text!)!
         calFlag = 2
         flag = 1
     }
     
     @IBAction func buttonreduce(_ sender: Any){
+        if(flag == 1){
+            caculaterDisplay.text = "\(temp + Double(caculaterDisplay.text!)!)"
+        }
         if(flag == 2){
             caculaterDisplay.text = "\(temp - Double(caculaterDisplay.text!)!)"
+        }
+        if(flag == 3){
+            caculaterDisplay.text = "\(temp * Double(caculaterDisplay.text!)!)"
+        }
+        if(flag == 4){
+            caculaterDisplay.text = "\(temp / Double(caculaterDisplay.text!)!)"
         }
         temp = Double(caculaterDisplay.text!)!
         flag = 2
@@ -132,8 +150,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonmultiply(_ sender: Any){
+        if(flag == 1){
+            caculaterDisplay.text = "\(temp + Double(caculaterDisplay.text!)!)"
+        }
+        if(flag == 2){
+            caculaterDisplay.text = "\(temp - Double(caculaterDisplay.text!)!)"
+        }
         if(flag == 3){
             caculaterDisplay.text = "\(temp * Double(caculaterDisplay.text!)!)"
+        }
+        if(flag == 4){
+            caculaterDisplay.text = "\(temp / Double(caculaterDisplay.text!)!)"
         }
         temp = Double(caculaterDisplay.text!)!
         flag = 3
@@ -141,6 +168,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttondivide(_ sender: Any){
+        if(flag == 1){
+            caculaterDisplay.text = "\(temp + Double(caculaterDisplay.text!)!)"
+        }
+        if(flag == 2){
+            caculaterDisplay.text = "\(temp - Double(caculaterDisplay.text!)!)"
+        }
+        if(flag == 3){
+            caculaterDisplay.text = "\(temp * Double(caculaterDisplay.text!)!)"
+        }
         if(flag == 4){
             caculaterDisplay.text = "\(temp / Double(caculaterDisplay.text!)!)"
         }
