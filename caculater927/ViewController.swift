@@ -178,7 +178,7 @@ class ViewController: UIViewController {
             caculaterDisplay.text = "\(temp * Double(caculaterDisplay.text!)!)"
         }
         if(flag == 4){
-            caculaterDisplay.text = "\(temp / Double(caculaterDisplay.text!)!)"
+                caculaterDisplay.text = "\(temp / Double(caculaterDisplay.text!)!)"
         }
         temp = Double(caculaterDisplay.text!)!
         flag = 4
@@ -196,7 +196,12 @@ class ViewController: UIViewController {
             caculaterDisplay.text = "\(temp * Double(caculaterDisplay.text!)!)"
         }
         if(flag == 4){
-            caculaterDisplay.text = "\(temp / Double(caculaterDisplay.text!)!)"
+            if(caculaterDisplay.text == "0"){
+                caculaterDisplay.text = "不是数字"
+            }
+            else{
+                caculaterDisplay.text = "\(temp / Double(caculaterDisplay.text!)!)"
+            }
         }
         if(flag == 5){
             temp = Foundation.pow(temp,Double(caculaterDisplay.text!)!)
