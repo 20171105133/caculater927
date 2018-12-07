@@ -276,6 +276,7 @@ class ViewController: UIViewController {
         caculaterDisplay.text = "\(temp)"
     }
     
+    
     @IBAction func reciprocal(_ sender: Any) {
         temp = Double(caculaterDisplay.text!)!
         temp = 1/temp
@@ -307,6 +308,23 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         caculaterDisplay.text="0"
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    override func viewDidAppear(_ animated: Bool){
+        super.viewDidAppear(animated)
+        
+        let alertController = UIAlertController(title: "欢迎使用计算器",message: "希望带来愉快的体验!",preferredStyle: .alert)
+        //let cancelAction = UIAlertAction(title: "不给", style: .cancel, handler: nil)
+        let okAction = UIAlertAction(title: "好的", style: .destructive, handler: {
+            action in
+            print("点击了确定")
+        })
+        //alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 
 

@@ -364,7 +364,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="reciprocal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cMA-Kk-lqF"/>
+                                    <action selector="reciprocal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UAD-gF-XQj"/>
                                 </connections>
                             </button>
                         </subviews>
